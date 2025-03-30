@@ -186,10 +186,10 @@ To customize the [favicon](https://en.wikipedia.org/wiki/Favicon) for your site,
   {{< /filetree/folder >}}
 {{< /filetree/container >}}
 
-Include both `favicon.ico` and `favicon.svg` files in your project to ensure your site's favicons display correctly.
+Include `favicon.ico`, `favicon.svg` and `favicon-dark.svg` files in your project to ensure your site's favicons display correctly.
 
-While `favicon.ico` is generally for older browsers, `favicon.svg` is supported by modern ones. The optional `favicon-dark.svg` can be included for a tailored experience in dark mode.
-Feel free to use tools like [favicon.io](https://favicon.io/) or [favycon](https://github.com/ruisaraiva19/favycon) to generate these icons.
+While `favicon.ico` is generally for older browsers, `favicon.svg` and `favicon-dark.svg` are supported by modern browsers.
+Use tools like [favicon.io](https://favicon.io/) or [favycon](https://github.com/ruisaraiva19/favycon) to generate such icons.
 
 ### Theme Configuration
 
@@ -211,6 +211,22 @@ Options for `theme.default`:
 
 The `theme.displayToggle` parameter allows you to display a toggle button for changing themes.
 When set to `true`, visitors can switch between light or dark mode, overriding the default setting.
+
+### Page Last Modification
+
+The date of the page's last modification can be displayed by enabling the `params.displayUpdatedDate` flag. To use Git commit date as the source, enable also the `enableGitInfo` flag.
+
+To customize the date format, set the `params.dateFormat` parameter. Its layout matches Hugo's [`time.Format`](https://gohugo.io/functions/time/format/).
+
+```yaml {filename="hugo.yaml"}
+# Parse Git commit
+enableGitInfo: true
+
+params:
+  # Display the last modification date
+  displayUpdatedDate: true
+  dateFormat: "January 2, 2006"
+```
 
 ### Page Width
 
